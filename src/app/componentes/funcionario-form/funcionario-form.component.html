@@ -1,0 +1,52 @@
+<mat-card>
+
+<h1> {{btnTitulo}} </h1>
+<form [formGroup]="funcionarioForm" (ngSubmit)="submit()" #formDit="ngForm">
+
+    <div class="input_box">
+      <mat-form-field >
+      <mat-label for="">Nome</mat-label>
+       <input matInput type="text" formControlName="nome" placeholder="Digite seu nome" required>
+      </mat-form-field>
+      </div>
+
+      <div class="input_box">
+        <mat-form-field >
+        <mat-label for="">Sobrenome</mat-label>
+         <input matInput type="text" formControlName="sobrenome" placeholder="Digite seu Sobrenome" required>
+        </mat-form-field>
+        </div>
+  
+    <div class="input_box">
+      <mat-form-field>
+      <mat-label for="">Departamento</mat-label>
+        <mat-select id="departamento" formControlName="departamento"  required>
+            <mat-option value="Rh">Rh</mat-option>
+            <mat-option value="Financeiro">Financeiro</mat-option>
+            <mat-option value="Compras">Compras</mat-option>
+            <mat-option value="Zeladoria">Zeladoria</mat-option>
+            <mat-option value="Atendimento">Atendimento</mat-option>
+            <mat-option value="Caixa">Caixa</mat-option>
+            <mat-option value="Gerencia">Gerencia</mat-option>
+            <mat-option value="Escritorio">Escritorio</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    
+    <div class="input_box">
+    <mat-form-field>
+        <mat-label for="">Turno</mat-label>
+          <mat-select id="turno" formControlName="turno"  required>
+              <mat-option value="manha">manha</mat-option>
+              <mat-option value="intermediario">intermediario</mat-option>
+              <mat-option value="tarde">tarde</mat-option>
+              <mat-option value="noturno">noturno</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="btn-box">
+<button  type="submit" [disabled]="!funcionarioForm.valid" mat-raised-button color="accent" > {{btnAcao}} </button>
+<button routerLink="" mat-button >Voltar</button>
+      </div>
+  </form>
+</mat-card>
